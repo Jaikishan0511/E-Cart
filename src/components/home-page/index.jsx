@@ -17,6 +17,7 @@ const HomePage = () => {
 
   const [badge, setBadge] = useState(badgeArray.length);
   const [screener, setScreener] = useState("All");
+  
   const fetchData = async () => {
     const response = await axios.get("/api/products");
     localStorage.setItem(
@@ -51,12 +52,10 @@ const HomePage = () => {
           setData={setData}
           badge={badge}
           setName={setName}
-          setScreener={setScreener}
         />
         <div className="page-content">
           <Categories
             setName={setName}
-            data={data}
             setData={setData}
             isCategoryListOpen={isCategoryListOpen}
             setIsCategoryListOpen={setIsCategoryListOpen}
@@ -70,16 +69,13 @@ const HomePage = () => {
                 setName={setName}
                 data={data}
                 setData={setData}
-                isCategoryListOpen={isCategoryListOpen}
                 setIsCategoryListOpen={setIsCategoryListOpen}
               />
             )}
             <ProductContainer
               data={data}
-              setData={setData}
               setBadge={setBadge}
               badge={badge}
-              name={name}
             />
           </div>
         </div>

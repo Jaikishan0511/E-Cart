@@ -7,7 +7,7 @@ const SortAndFilter = props => {
     { value: "Highest to lowest" },
     { value: "Lowest to highest" }
   ];
-  const { setName, setData, setIsCategoryListOpen, data } = props;
+  const { setName, setData, setIsCategoryListOpen, data, name } = props;
 
   const onSortChange = event => {
     event.preventDefault();
@@ -41,7 +41,7 @@ const SortAndFilter = props => {
       <select
         className="custom-select"
         onChange={e => onSortChange(e)}
-        value={props.name}
+        value={name}
       >
         {SELECT_SORT.map((item, key) => {
           return (
