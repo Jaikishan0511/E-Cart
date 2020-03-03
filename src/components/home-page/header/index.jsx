@@ -20,7 +20,7 @@ const Header = props => {
       <div className="title"> MyCart </div>
       <div className="search-bar">
         <img src="/images/search-icon.png" alt="logo" />
-        <input type="text" onChange={onSearchChange}  />
+        <input type="text" onChange={onSearchChange}  placeholder="search products" />
       </div>
       <div className="cart-img">
         <Link to="/view-cart">
